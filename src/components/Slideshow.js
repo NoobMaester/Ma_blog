@@ -10,7 +10,7 @@ const Slideshow = () => {
 
   return <Slide>
     <div className="each-slide-effect">
-                <div style={{ 'backgroundImage': `url(${images[0]})` }}>
+                <div style={{ 'backgroundImage': `url(${images[0]})`, 'backgroundPosition':'bottom' }}>
                     <span>Slide 1</span>
                 </div>
             </div>
@@ -20,7 +20,7 @@ const Slideshow = () => {
                 </div>
             </div>
             <div className="each-slide-effect">
-                <div style={{ 'backgroundImage': `url(${images[2]})` }}>
+                <div style={{ 'backgroundImage': `url(${images[2]})`, 'backgroundPosition':'bottom' }}>
                     <span>Slide 3</span>
                 </div>
             </div>
