@@ -25,6 +25,8 @@ const Footer = () => {
           {currentUser ? (<Link to= "/"> <button className="btn" onClick={logout}>Logout</button></Link>) : (
            <Link to= "/login"> <button className="btn">Admin</button></Link>
           )}
+         
+          
           </div>
         </div>
       </div>

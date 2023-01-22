@@ -9,6 +9,9 @@ import Login from "./pages/Admin/Login";
 import Posts from "./pages/Admin/post";
 import Add from "./pages/Admin/Add";
 import Navbar from "./components/navbar/Navbar";
+import Single from "./pages/Admin/Single";
+
+
 function App() {
   return (
     <BrowserRouter>
@@ -26,6 +29,8 @@ function App() {
         <Route path="posts" element={<Posts/>} ></Route>
         <Route path="add" element={<Add/>} ></Route>
         <Route path="login" element={<Login/>} ></Route>
+        <Route path='single/:pid' element={<Single />} />
+
       </Routes>
       <Footer/>
     </main>

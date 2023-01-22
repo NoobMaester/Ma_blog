@@ -1,13 +1,31 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import Testimonial from "../components/Testimonial";
-import product from "./../img/prod1.jpg";
-import product1 from "./../img/prod2.jpg";
-import product2 from "./../img/prod3.jpg";
 import pinup from "./../img/pinup.png";
 import clothing from "./../img/clothing.png";
 import Slideshow from "../components/Slideshow";
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+
+
+
+  
 
 const Home = () => {
+  const [posts,setPosts] = useState([])
+  const cat = useLocation().search
+  
+  useEffect(()=>{
+      const fetchData = async ()=>{
+          try{
+              const res = await axios.get(`/posts${cat}`);
+              setPosts(res.data)
+          }catch(err){
+              console.log(err)
+          }
+      }
+      fetchData()
+},[cat])
   return (
     <div>
       <Slideshow />
@@ -30,78 +48,51 @@ const Home = () => {
         <h4>Our Product</h4>
         
         <h1>Trending Outfit of The Week</h1>
-        <div className="cards">
-          <div className="product">
-            <img src={product} alt="product" />
-            <h4>Maroon Classical Jacket</h4>
-            <p>$48</p>
-            <NavLink to="contact">
-              <button className="btn">Shop Now</button>
-            </NavLink>
-          </div>
-
-          <div className="product">
-            <img src={product1} alt="product" />
-            <h4>Maroon Classical Jacket</h4>
-            <p>$48</p>
-          </div>
-
-          <div className="product">
-            <img src={product2} alt="product" />
-            <h4>Maroon Classical Jacket</h4>
-            <p>$48</p>
-          </div>
+        <div className='cards'>
+        {posts.map((post)=>(
+        <div className='product'key={post.id}>
+            <div className='img'>
+            <img src={`../upload/${post.img}`} alt=""/>
+                </div>
+                <h4> {post.title} </h4>
+                <p>{post.caption}</p>
+                <p>Rwf {post.price}</p>
         </div>
-
-        <h1>Trending Outfit of The Week</h1>
-        <div className="cards">
-          <div className="product">
-            <img src={product} alt="product" />
-            <h4>Maroon Classical Jacket</h4>
-            <p>$48</p>
-            <NavLink to="contact">
-              <button className="btn">Shop Now</button>
-            </NavLink>
-          </div>
-
-          <div className="product">
-            <img src={product1} alt="product" />
-            <h4>Maroon Classical Jacket</h4>
-            <p>$48</p>
-          </div>
-
-          <div className="product">
-            <img src={product2} alt="product" />
-            <h4>Maroon Classical Jacket</h4>
-            <p>$48</p>
-          </div>
+        ))}
         </div>
-
-        <h1>Trending Outfit of The Week</h1>
-        <div className="cards">
-          <div className="product">
-            <img src={product} alt="product" />
-            <h4>Maroon Classical Jacket</h4>
-            <p>$48</p>
-            <NavLink to="contact">
-              <button className="btn">Shop Now</button>
-            </NavLink>
-          </div>
-
-          <div className="product">
-            <img src={product1} alt="product" />
-            <h4>Maroon Classical Jacket</h4>
-            <p>$48</p>
-          </div>
-
-          <div className="product">
-            <img src={product2} alt="product" />
-            <h4>Maroon Classical Jacket</h4>
-            <p>$48</p>
-          </div>
+        <Link to = "/contact"><button className="edit">More Info</button></Link>
+        <h1>Suits</h1>
+        <div className='cards'>
+        {posts.map((post)=>(
+        <div className='product'key={post.id}>
+            <div className='img'>
+            <img src={`../upload/${post.img}`} alt=""/>
+                </div>
+                <h4> {post.title} </h4>
+                <p>{post.caption}</p>
+                <p>Rwf {post.price}</p>
         </div>
-      </div>
+        ))}
+        
+        </div>
+        <Link to = "/contact"><button className="edit">More Info</button></Link>
+        <h1>Shoes</h1>
+        <div className='cards'>
+        {posts.map((post)=>(
+        <div className='product'key={post.id}>
+            <div className='img'>
+            <img src={`../upload/${post.img}`} alt=""/>
+                </div>
+                <h4> {post.title} </h4>
+                <p>{post.caption}</p>
+                <p>Rwf {post.price}</p>
+        </div>
+        ))}
+        
+        </div>
+        <Link to = "/contact"><button className="edit">More Info</button></Link>
       <Testimonial />
+      </div>
     </div>
   );
 };

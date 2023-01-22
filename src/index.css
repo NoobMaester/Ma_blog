@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Yeon+Sung&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Yeon+Sung&display=swap');
 
 :root{
   --primary: #bc4123;
@@ -7,7 +7,7 @@
 body{
   margin: 0;
   font-family: "Poppins";
-  
+  background: rgb(243, 223, 223) ;
 }
 *{
   color: var(--secondary);
@@ -81,14 +81,17 @@ p{
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #f7fafc;
+  background: white;
+  gap: 10px;
 }
+
 .products h4{
   color: #bc4123;
 }
 .cards{
   padding: 2rem;
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 .product {
@@ -307,12 +310,14 @@ p{
   justify-content: center;
   align-items: center;
   margin-bottom: 5rem;
+  flex-wrap: wrap;
 }
 
-
-
-
-
+.about h1 {
+ margin-top: 2rem;
+ font-family: "Dancing script", cursive;
+ color:rgb(242, 100, 100)
+}
 
 
 .auth{

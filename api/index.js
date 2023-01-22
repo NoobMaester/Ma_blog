@@ -26,6 +26,6 @@ app.use("/api/posts", postRoutes)
 app.use("/api/auth", authRoutes)
 app.use("/api/user", userRoutes)
 
-app.listen(8800, ()=>{
-    console.log("connected! to backend")
+app.listen(process.env.PORT, ()=>{
+    console.log(`server running on port`)
 })

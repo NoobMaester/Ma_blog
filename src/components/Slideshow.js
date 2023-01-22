@@ -1,27 +1,42 @@
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
+import Product1 from "../img/1673963535811ContactSheet-002.jpg"
+import Product2 from "../img/1673967729929DSC_3065.JPG"
+import Product3 from "../img/1673968157715DSC_2872.JPG"
+
+
 
 const Slideshow = () => {
   const images = [
-    "https://images.unsplash.com/photo-1509721434272-b79147e0e708?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
-    "https://images.unsplash.com/photo-1506710507565-203b9f24669b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1536&q=80",
-    "https://images.unsplash.com/photo-1536987333706-fc9adfb10d91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
+   Product1,
+   Product2,
+   Product3,
   ];
 
   return <Slide>
     <div className="each-slide-effect">
+<<<<<<< HEAD
                 <div style={{ 'backgroundImage': `url(${images[0]})`, 'backgroundPosition':'bottom' }}>
                     <span>Slide 1</span>
+=======
+                <div style={{ 'backgroundImage': `url(${images[0]})` }}>
+                    
+>>>>>>> 40e9fb01e1f5d660635864ba6db0a62b86bca1e5
                 </div>
             </div>
             <div className="each-slide-effect">
-                <div style={{ 'backgroundImage': `url(${images[1]})`, 'backgroundPosition':'bottom' }}>
-                    <span>Slide 2</span>
+                <div style={{ 'backgroundImage': `url(${images[1]})` }}>
+                    
                 </div>
             </div>
             <div className="each-slide-effect">
+<<<<<<< HEAD
                 <div style={{ 'backgroundImage': `url(${images[2]})`, 'backgroundPosition':'bottom' }}>
                     <span>Slide 3</span>
+=======
+                <div style={{ 'backgroundImage': `url(${images[2]})` }}>
+                    
+>>>>>>> 40e9fb01e1f5d660635864ba6db0a62b86bca1e5
                 </div>
             </div>
   </Slide>;

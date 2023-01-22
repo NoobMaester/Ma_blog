@@ -49,5 +49,5 @@
     "jest": "^29.3.1",
     "webpack": "^5.75.0"
   },
-  "proxy": "http://localhost:8800/api/"
+  "proxy": "https://macolombe.herokuapp.com/api/"
 }
